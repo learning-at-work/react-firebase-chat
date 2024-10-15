@@ -32,67 +32,66 @@ const Detail = () => {
             <span>Shared photos</span>
             <img src="./arrowDown.png" alt="" />
           </div>
-        </div>
-        <div className="photos">
-          <div className="photoItem">
-            <div className="photoDetail">
-              <img 
-                src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+
+          <div className="photos">
+
+            <div className="photoItem">
+              <div className="photoDetail">
+                <img 
+                  src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                  alt=""
+                  />
+                <span>photo_2024_2.png</span>
+              </div>
+              <img
+                src="./download.png"
                 alt=""
+                className='icon'
               />
-              <span>photo_2024_2.jpg</span>
             </div>
-            <img src="./download.png" alt="" />
-          </div>
-          <div className="photoItem">
-            <div className="photoDetail">
-              <img 
-                src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            <div className="photoItem">
+              <div className="photoDetail">
+                <img 
+                  src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                  alt=""
+                  />
+                <span>photo_2024_2.png</span>
+              </div>
+              <img
+                src="./download.png"
                 alt=""
+                className='icon'
               />
-              <span>photo_2024_2.jpg</span>
             </div>
-            <img src="./download.png" alt="" />
-          </div>
-          <div className="photoItem">
-            <div className="photoDetail">
-              <img 
-                src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            <div className="photoItem">
+              <div className="photoDetail">
+                <img 
+                  src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                  alt=""
+                  />
+                <span>photo_2024_2.png</span>
+              </div>
+              <img
+                src="./download.png"
                 alt=""
+                className='icon'
               />
-              <span>photo_2024_2.jpg</span>
             </div>
-            <img src="./download.png" alt="" />
-          </div>
-          <div className="photoItem">
-            <div className="photoDetail">
-              <img 
-                src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+            <div className="photoItem">
+              <div className="photoDetail">
+                <img 
+                  src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                  alt=""
+                  />
+                <span>photo_2024_2.png</span>
+              </div>
+              <img
+                src="./download.png"
                 alt=""
+                className='icon'
               />
-              <span>photo_2024_2.jpg</span>
             </div>
-            <img src="./download.png" alt="" />
-          </div>
-          <div className="photoItem">
-            <div className="photoDetail">
-              <img 
-                src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                alt=""
-              />
-              <span>photo_2024_2.jpg</span>
-            </div>
-            <img src="./download.png" alt="" />
-          </div>
-          <div className="photoItem">
-            <div className="photoDetail">
-              <img 
-                src="https://images.pexels.com/photos/7381200/pexels-photo-7381200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                alt=""
-              />
-              <span>photo_2024_2.jpg</span>
-            </div>
-            <img src="./download.png" alt="" />
+
           </div>
         </div>
         <div className="option">
@@ -101,6 +100,7 @@ const Detail = () => {
             <img src="./arrowUp.png" alt="" />
           </div>
         </div>
+        
         <button>Block User</button>
       </div>
     </div>
