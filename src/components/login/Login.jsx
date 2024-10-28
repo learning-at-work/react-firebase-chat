@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./login.css"
+import { toast } from "react-toastify"
 
 const Login = () => {
 
@@ -8,8 +9,7 @@ const Login = () => {
     url: ""
   })
 
-  const handleAvatar = (e) => {
-
+  const handleAvatar = e => {
     if(e.target.files[0]) {
 
       setAvatar({
@@ -18,13 +18,17 @@ const Login = () => {
       })
     }
   }
+
+  const handleLogin = e => {
+    e.preventDefault()
+    toast.success("Hello")
+  }
   
   return (
     <div className='login'>
       <div className="item">
         <h2>Welcome back,</h2>
-        <form action="">
-          <input type="file" id="file"/>
+        <form onSubmit={handleLogin}>
           <input type="text" placeholder="Email" name="email"/>
           <input type="password" placeholder="Password" name="pwd"/>
           <button>Login</button>
@@ -33,11 +37,11 @@ const Login = () => {
       <div className="separator"></div>
       <div className="item">
         <h2>Create an Account</h2>
-        <form action="">
-          <label htmlFor="file">
+        <form>
+          <label htmlFor="fileAvatar">
             <img src={avatar.url || "./avatar.png"} alt="" />
             Upload an image</label>
-          <input type="file" id="file" style={{ display: "none" }} onChange={handleAvatar}/>
+          <input type="file" id="fileAvatar" style={{ display: "none" }} onChange={handleAvatar}/>
           <input type="text" placeholder="Username" name="username"/>
           <input type="text" placeholder="Email" name="email"/>
           <input type="password" placeholder="Password" name="pwd"/>
