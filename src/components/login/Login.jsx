@@ -11,7 +11,9 @@ const Login = () => {
   const [avatar, setAvatar] = useState({
     file: null,
     url: ""
-  })
+  });
+
+  const [loading, setLoading] = useState(false)
 
   const handleAvatar = e => {
     if(e.target.files[0]) {
@@ -29,7 +31,8 @@ const Login = () => {
   }
 
   const handleRegister = async e => {
-    e.preventDefault()
+    e.preventDefault();
+    setLoading(true);
     const formData = new FormData(e.target)
 
     const {
@@ -46,6 +49,7 @@ const Login = () => {
       await setDoc(doc(db, "users", res.user.uid), {
         username,
         email,
+        avatar: imgUrl,
         id: res.user.uid,
         blocked: []
       });
@@ -57,8 +61,12 @@ const Login = () => {
       toast.success("Account created!")
 
     } catch (error) {
+
       console.log(error)
       toast.message(error.message)
+
+    } finally {
+      setLoading(false)
     }
 
   }
@@ -68,23 +76,35 @@ const Login = () => {
       <div className="item">
         <h2>Welcome back,</h2>
         <form onSubmit={handleLogin}>
+
           <input type="text" placeholder="Email" name="email"/>
           <input type="password" placeholder="Password" name="pwd"/>
-          <button>Login</button>
+          <button disabled={loading}>{loading ? "Loading" : "Login"}</button>
+
         </form>
       </div>
+
       <div className="separator"></div>
       <div className="item">
         <h2>Create an Account</h2>
         <form onSubmit={handleRegister}>
           <label htmlFor="fileAvatar">
             <img src={avatar.url || "./avatar.png"} alt="" />
-            Upload an image</label>
-          <input type="file" id="fileAvatar" style={{ display: "none" }} onChange={handleAvatar}/>
+            Upload an image
+          </label>
+
+          <input 
+            type="file" 
+            id="fileAvatar" 
+            style={{ display: "none" }} 
+            onChange={handleAvatar}
+          />
+
           <input type="text" placeholder="Username" name="username"/>
           <input type="text" placeholder="Email" name="email"/>
           <input type="password" placeholder="Password" name="pwd"/>
-          <button>Sign Up</button>
+          <button disabled={loading}>{loading ? "Loading" : "Sign Up"}</button>
+
         </form>
       </div>
     </div>

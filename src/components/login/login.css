@@ -52,7 +52,12 @@
         background-color: #1f8ef1;
         color:white;
         border-radius: 5px;
-        cursor:pointer
+        cursor:pointer;
+
+        &:disabled {
+          cursor: not-allowed;
+          background-color: #1473c6;
+        }
       }
     }
   }
