@@ -32,3 +32,10 @@ body {
     }
   }
 }
+
+.loading {
+  padding: 50px;
+  font-style: 36px;
+  background-repeat: 10px;
+  background-color: rgba(17, 25, 40, 0.9);
+}
