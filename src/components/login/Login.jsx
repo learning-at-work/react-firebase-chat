@@ -40,7 +40,7 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, pwd);
     } catch (error) {
       console.log(error)
-      toast.success(error?.message)
+      toast.error(error?.message)
     } finally {
       setLoading(false)
     }

@@ -28,7 +28,8 @@ const ChatList = () => {
 					return { ...items, user }
 				});
 
-				const chatData = await Promise.all();
+				const chatData = await Promise.all(promises);
+				console.log({chatData: chatData})
 				setChats(chatData.sort((a, b) => b.updatedAt - a.updatedAt ));
 			}
 		);
@@ -38,7 +39,7 @@ const ChatList = () => {
 		}
 	}, [currentUser.id]);
 
-	console.log(chats);
+	console.log({chats: chats});
 
 	return (
 		<div className="chatList" >
@@ -59,9 +60,9 @@ const ChatList = () => {
 
 			{chats.map((chat) => (
 				<div className="item" key={chat.chatId} >
-					<img src="./avatar.png" alt="" />
+					<img src={chat.user.avatar || "./avatar.png"} alt="" />
 					<div className="texts">
-						<span>Juana</span>
+						<span>{chat.user.username}</span>
 						<p>{chat?.lastMessage}</p>
 					</div>
 				</div>
