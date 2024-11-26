@@ -4,13 +4,19 @@ import AddUser from "./addUser/AddUser"
 import { doc, getDoc, onSnapshot } from "firebase/firestore";
 import { useUserStore } from "../../../lib/userStore";
 import { db } from "../../../lib/firebase";
+import { useChatStore } from "../../../lib/chatStore";
 
 const ChatList = () => {
 
 	const [chats, setChats] = useState([])
 	const [addMode, setAddMode] = useState(false)
 
-	const {currentUser, isLoading, fetchUserInfo} = useUserStore()
+	const {currentUser} = useUserStore()
+	const {changeChat} = useChatStore()
+
+	const handleSelect = async (chat) => {
+		changeChat(chat.chatId, chat.user)
+	}
 
 	useEffect(() => {
 
@@ -59,7 +65,7 @@ const ChatList = () => {
 			</div>
 
 			{chats.map((chat) => (
-				<div className="item" key={chat.chatId} >
+				<div className="item" key={chat.chatId} onClick={() => handleSelect(chat.chatId)}>
 					<img src={chat.user.avatar || "./avatar.png"} alt="" />
 					<div className="texts">
 						<span>{chat.user.username}</span>
